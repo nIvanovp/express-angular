@@ -4,6 +4,15 @@ steps:
   build-prj:
     type: build
     description: codefresh example
-    image-name: codefreshexamples/expressangular
+    image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
     tag: latest
+
+  push-bintray:
+    type: push
+    candidate: ${{build-prj}}
+    tag: latest
+    registry: ${{registry}}
+    credentials:
+      username: ${{username}}
+      password: ${{password}}
