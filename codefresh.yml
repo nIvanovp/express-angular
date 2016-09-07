@@ -13,7 +13,7 @@ steps:
     working-directory: ${{clone-prj}}
     tag: latest
 
-  push-dockerhub:
-    type: push
-    candidate: ${{build-prj}}
-    tag: latest
+  # push-dockerhub:
+  #   type: push
+  #   candidate: ${{build-prj}}
+  #   tag: latest
