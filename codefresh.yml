@@ -11,12 +11,13 @@ steps:
     image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
     working-directory: ${{clone-project}}
-    tag: ${{CF-BRANCH}}
+    tag: ${CF-BRANCH}
 
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
-    tag: ${{CF-BRANCH}}
+    tag: ${CF-BRANCH}
     credentials:
       username: ${{username}}
       password: ${{password}}
+    fail-fast: false # default true
