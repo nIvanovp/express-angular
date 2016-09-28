@@ -16,7 +16,7 @@ steps:
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
-    tag: ${{CF_BRANCH}}
+    tag: ${{CF_BRANCH}}:${{CF_REVISION}}
     credentials:
       username: ${{username}}
       password: ${{password}}
