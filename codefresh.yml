@@ -8,7 +8,7 @@ steps:
   build-project:
     type: build
     description: codefresh example
-    image-name: gcr.io/cf-ci-1027/ncodefresh/express-angular
+    image-name: gcr.io/cf-ci-1027/express-angular
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
 
@@ -16,7 +16,7 @@ steps:
     type: push
     candidate: ${{build-project}}
     tag: ${{CF_BRANCH}}
-    registry: gcr.io
+    registry: https://gcr.io
     credentials:
       username: ${{username}}
       password: ${{password}}
