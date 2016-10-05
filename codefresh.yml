@@ -1,23 +1,23 @@
 version: '1.0'
 
 steps:
-  clone-project:
-    type: git-clone
-    repo: https://github.com/nCodefresh/express-angular.git
+#  clone-project:
+#    type: git-clone
+#    repo: https://github.com/nCodefresh/express-angular.git
 
   build-project:
     type: build
     description: codefresh example
-    image-name: ncodefresh/express-angular
+    image-name: cf-ci-1027/express-angular
     dockerfile: Dockerfile
-    working-directory: ${{clone-project}}
     tag: ${{CF_BRANCH}}
 
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
     tag: ${{CF_BRANCH}}
+    registry: gcr.io
     credentials:
       username: ${{username}}
       password: ${{password}}
-    fail-fast: false # default true
+      email: ${{email}}
