@@ -8,7 +8,7 @@ steps:
   build-project:
     type: build
     description: codefresh example
-    image-name: cf-ci-1027/express-angular
+    image-name: gcr.io/cf-ci-1027/express-angular
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
 
