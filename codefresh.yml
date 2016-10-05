@@ -16,7 +16,7 @@ steps:
     type: push
     candidate: ${{build-project}}
     tag: ${{CF_BRANCH}}
-    registry: https://gcr.io
+    registry: gcr.io
     credentials:
       username: ${{username}}
       password: ${{password}}
