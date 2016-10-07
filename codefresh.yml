@@ -10,7 +10,6 @@ steps:
     description: codefresh example
     image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
-    tag: ${{CF_BRANCH}}
 
   push-to-dockerhub:
     type: push
