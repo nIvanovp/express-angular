@@ -3,7 +3,7 @@ version: '1.0'
 steps:
 
   generate-tag:
-    image: go:onbuild
+    image: node:latest
     commands:
         - export TAG=$(echo '12345678910111' | cut -c1-8)
 
