@@ -5,8 +5,8 @@ steps:
   generate-tag:
     image: node:latest
     commands:
-        - export TAG=$(echo '12345678910111' | cut -c1-8)
-        - echo $TAG
+        - bash -c "export TAG=$(echo '12345678910111' | cut -c1-8)"
+        - bash -c "echo $TAG"
 
   build-project:
     type: build
