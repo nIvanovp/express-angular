@@ -9,9 +9,10 @@ steps:
         - echo "start-command"
         - bash -c 'export TAG=1234 && echo "start" && echo $TAG'
         - echo "stop-command"
-        - echo ${{TAG}}
-        - bash -c "export TAG=$(echo '12345678910111' | cut -c1-8)"
-        - bash -c "echo $TAG"
+        - echo ${{CF_BRANCH}}
+#        - echo ${{TAG}}
+#        - bash -c "export TAG=$(echo '12345678910111' | cut -c1-8)"
+#        - bash -c "echo $TAG"
 
   build-project:
     type: build
