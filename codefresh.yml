@@ -8,7 +8,8 @@ steps:
     commands:
         - echo "start-command"
         - bash -c 'export TAG=1234 && echo "start" && echo $TAG'
-        - echo $TAG
+        - echo "stop-command"
+        - echo ${{TAG}}
         - bash -c "export TAG=$(echo '12345678910111' | cut -c1-8)"
         - bash -c "echo $TAG"
 
@@ -18,10 +19,10 @@ steps:
     description: codefresh example
     image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
-    tag: $TAG
+    tag: ${{TAG}}
 
 
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
-    tag: $TAG
+    tag: ${{TAG}}
