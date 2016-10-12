@@ -6,16 +6,17 @@ steps:
     image: node:latest
     commands:
         - export TAG=$(echo '12345678910111' | cut -c1-8)
+        - echo $TAG
 
   build-project:
     type: build
     description: codefresh example
     image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
-    tag: ${{TAG}}
+    tag: $TAG
 
 
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
-    tag: ${{TAG}}
+    tag: $TAG
