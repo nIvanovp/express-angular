@@ -2,14 +2,14 @@ version: '1.0'
 
 steps:
 
-  generate-tag:
-    image: node:latest
-    working-directory: ${{initial-clone}}
-    commands:
-        - echo "start-command"
-        - bash -c 'export TAG=1234 && echo "start" && echo $TAG'
-        - echo "stop-command"
-        - echo ${{CF_BRANCH}}
+#  generate-tag:
+#    image: node:latest
+#    working-directory: ${{initial-clone}}
+#    commands:
+#        - echo "start-command"
+#        - bash -c 'export TAG=1234 && echo "start" && echo $TAG'
+#        - echo "stop-command"
+#        - echo ${{CF_BRANCH}}
 #        - echo ${{TAG}}
 #        - bash -c "export TAG=$(echo '12345678910111' | cut -c1-8)"
 #        - bash -c "echo $TAG"
@@ -20,10 +20,10 @@ steps:
     description: codefresh example
     image-name: ncodefresh/express-angular
     dockerfile: Dockerfile
-    tag: ${{TAG}}
+    tag: ${{CF_REVISION}}
 
 
   push-to-dockerhub:
     type: push
     candidate: ${{build-project}}
-    tag: ${{TAG}}
+    tag: ${{CF_REVISION_SHORT}}
