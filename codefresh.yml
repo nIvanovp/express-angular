@@ -17,7 +17,7 @@ steps:
     dockerfile: Dockerfile
     tag: ${{CF_SHORT_REVISION}}
 
-  push-to-dockerhub:
-    type: push
-    candidate: ${{build-project}}
-#    tag: ${{CF_SHORT_REVISION}}
+#  push-to-dockerhub:
+#    type: push
+#    candidate: ${{build-project}}
+##    tag: ${{CF_SHORT_REVISION}}
