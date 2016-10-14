@@ -9,7 +9,6 @@ var bodyParser = require('body-parser'); 	// pull information from HTML POST (ex
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 
 
-
 app.use(express.static(__dirname + '/public')); 				// set static path
 app.use(morgan('dev')); 										// log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'})); 			// parse application/x-www-form-urlencoded
